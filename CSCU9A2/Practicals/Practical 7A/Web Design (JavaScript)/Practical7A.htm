@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<title>Practical Class 7A</title>
+
+<script>
+  function ChangeImage(imageName, newImageFile) {
+
+    // Find the object that represents the img element.
+    var image = document.getElementById(imageName)
+
+    // Change the picture.
+    image.src = newImageFile
+  }
+
+    function ToggleVisibility(image, element){
+    // Find the image.
+    var image = document.getElementById(image)
+
+    // Find the element to hide/unhide.
+    var element = document.getElementById(element)
+
+    // Check the element's current state.
+    if (element.style.display == "none"){
+      // If hidden, unhide it.
+      element.style.display = "block"
+      image.src = "open.png"
+    }
+    else
+    {
+      // If not hidden, hide it.
+      element.style.display = "none"
+      image.src = "closed.png";
+    }
+  }
+</script>
+
+<h1> This is how to use <a href="Practical7A.htm" onmouseover="alert('JavaScript is the best!!')">JavaScript!</a></h1>
+
+<p>
+<img id="SwappableImage" src="stirlingimage1.jpg" onmouseover="ChangeImage('SwappableImage', 'stirlingimage2.jpg')" alt="changing image"
+onmouseout="ChangeImage('SwappableImage', 'stirlingimage1.jpg')" width=600 height=300 >
+</p>
+
+  <div onclick="ToggleVisibility('Question1Image','HiddenAnswer1')">
+  <p>
+  <img id="Question1Image" src="closed.png" alt=""/>
+  <b>History</b>
+  </p>
+  </div>
+  <p id="HiddenAnswer1" class="indent">Stirling was originally a Stone Age settlement as shown by the Randolphfield standing stones and Kings Park prehistoric carvings that can still be found south of the town.[4][5] The city has been strategically significant since at least the Roman occupation of Britain, due to its naturally defensible crag and tail hill (latterly the site of Stirling Castle), and its commanding position at the foot of the Ochil Hills on the border between the Lowlands and Highlands, at the lowest crossing point of the River Forth. It remained the river's lowest crossing until the construction of the Kincardine Bridge further downstream in the 1930s. It is supposed that Stirling is the fortress of Iuddeu or Urbs Giudi where Oswiu of Northumbria was besieged by Penda of Mercia in 655, as recorded in Bede and contemporary annals.</p>
+
+  <div onclick="ToggleVisibility('Question2Image','HiddenAnswer2')">
+  <p>
+  <img id="Question2Image" src="closed.png" alt="" />
+  <b>Governance</b>
+  </p>
+  </div>
+  <p id="HiddenAnswer2" class="indent">In terms of local government, the city of Stirling is a part of the wider Stirling Council area, which governs on matters of local administration as set out by the Local Government etc (Scotland) Act 1994. The current members of the Council were voted in 2012 for a term of office of 5 years. The Council is currently controlled by a Labour - Conservative partnership administration.[12] The Provost of Stirling is Cllr Mike Robbins.</p>
+
+<script>
+// Hide all sections, one by one.
+ToggleVisibility('Question1Image','HiddenAnswer1')
+ToggleVisibility('Question2Image','HiddenAnswer2')
+</script>
+
+</body>
+
+</html>

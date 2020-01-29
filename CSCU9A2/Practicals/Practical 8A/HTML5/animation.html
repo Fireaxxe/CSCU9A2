@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple animations in HTML5</title>
+</head>
+
+<body>
+
+<h2> Optical Illusion </h2>
+<script>
+  function toggleSize(element){
+
+
+    // Find the element to hide/unhide.
+    var element = document.getElementById(element)
+
+    // Check the element's current state.
+    if (element.style.width == "200px"){
+      // If hidden, unhide it.
+      element.style.width = "640px"
+
+    }
+    else
+    {
+      element.style.width= "200px"
+    }
+  }
+</script>
+  <form name="thisForm">
+  <input type="button"value="Big/Small" onclick="toggleSize('illusion')">
+
+</form>
+
+<video id="illusion"  controls>
+  <source src="Illusion_movie.mp4">
+  <source src="Illusion_movie.ogg">
+  Your browser does not support the video tag.
+</video>
+<p>
+Watch the animation for 1 minute, staring at the centre of the image. Then look at something else near you.
+For a few seconds everything will appear to distort.
+Source: <a href="http://en.wikipedia.org/wiki/File:Illusion_movie.ogg">Wikipedia:Illusion movie</a>
+</p>
+
+
+<canvas id="myCanvas" width="500" height="500"> Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+        var x=20;
+        var y=50;
+        var dx=2;
+        var dy=4;
+        var WIDTH = 600;
+        var HEIGHT = 300;
+        var MESSAGE_WIDTH = 200; // width of message
+        var MESSAGE_HEIGHT = 100; // height of message
+        animate(); // run the animation
+        var right = true;
+        var down = true;
+
+function drawMessage()
+{
+
+    context.fillStyle = "white";
+    context.fillRect(0,0,500,500);
+
+    context.fillStyle = "red";
+    context.fillRect(x,y,MESSAGE_WIDTH,MESSAGE_HEIGHT);
+    context.fillStyle = "black";
+    context.font = "40px Arial";
+
+    context.fillText("Sup Bro", x+20, y+70);
+
+   if(right){
+       x=x+dx;
+   }
+    else{
+        x=x-dx;
+    }
+    if(down){
+        y=y+dy;
+    }
+    else{
+        y=y-dy;
+    }
+    if(x<=0){
+        right = true;
+    }
+    if(x>=300){
+        right = false;
+    }
+    if(y<=0){
+        down = true;
+    }
+    if(y>=400){
+        down = false;
+    }
+
+
+
+
+
+
+
+}
+function animate()
+{
+  return setInterval(drawMessage, 1);
+}
+</script>
+
+</body>
+</html>

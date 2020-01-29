@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+<!-- saved from url=(0014)about:internet -->
+<head>
+  <title>JavaScript Test</title>
+</head>
+
+<body>
+  <h1>What Day Is It?</h1>
+  <p>This page uses JavaScript.</p>
+  <p>
+  <script type="text/javascript">
+
+// Change these values for testing depending on the day
+   var userMonthBirthday = 2
+    var userDayBirthday = 30
+    var today = new Date()
+
+ var message = "The current date is " + today.toDateString()
+
+document.write(message)
+
+if(today.getDate() == userDayBirthday && today.getMonth() == userMonthBirthday)
+{
+alert("Happy Birthday bro")
+}
+
+
+  </script>
+  </p>
+</body>
+
+</html>

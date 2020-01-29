@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<!-- saved from url=(0014)about:internet -->
+
+<head>
+  <title>More JavaScript Examples</title>
+
+<script>
+
+  function newText()
+  {
+        document.thisForm.thisText.value="Some new text!" ;
+  }
+
+  function updateCount()
+  {
+        count += 1 ;
+        document.nextForm.thisText.value=count ;
+  }
+</script>
+</head>
+
+
+<h1>Examples using functions with buttons and forms</h1>
+
+<p>
+Using JavaScript forms can call functions.
+In the form declaration one can select a function to call.
+When the button below is pressed, the function newText() is called
+and the text in the text field is updated.
+</p>
+
+<form name="thisForm">
+  <input type="button"value="push to set" onclick="newText()">
+  <input type="text" name="thisText" value=0>
+</form>
+
+<h2>Using a variable</h2>
+<p>
+Variables in JavaScript can be local (declared inside a function) or global
+(declared within a script element but outside a function). Global variables
+can be referred to anywhere else in the document. This example uses a global variable.
+</p>
+
+<script>
+  var count = 0 ;
+</script>
+
+<p>
+The variable is used to keep a count of how often the button below has been
+pushed. When the button is pushed, a function is called which increments the count,
+then sets the text in the form to the new count.
+</p>
+
+
+<form name="nextForm">
+  <input type="button" name="thisButton" value="push to increment" onclick="updateCount()">
+  <input type="text" name="thisText" value=0>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+2A 01
+1B 80
+5C AB
+40 CB
+3C 80
+B0 04
+C0 00
+
+Halt is not neccesary because the program is a loop

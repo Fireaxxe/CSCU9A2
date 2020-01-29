@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+<!-- saved from url=(0014)about:internet -->
+
+<head>
+  <title>A Functional Page</title>
+
+<script>
+  function ShowAlertBox(customMessage)
+  {
+    // Get the date.
+    var currentDate = new Date()
+
+    // Build the full message.
+    var fullMessage = "** IMPORTANT BULLETIN **\n\n"
+    fullMessage += customMessage + "\n\n"
+    fullMessage += "Generated at: " + currentDate.toTimeString() + "\n"
+    fullMessage += "This message courtesy of MagicMedia Inc. and CSCU9A2"
+
+    // Show the message.
+    alert(fullMessage)
+  }
+</script>
+
+<script>
+  function MultiplyNumbers(numberA, numberB)
+  {
+    return numberA * numberB
+  }
+</script>
+
+</head>
+
+<body>
+
+<h1>A Functional Page</h1>
+<p>This page uses JavaScript functions.</p>
+<p>
+<script>
+ShowAlertBox("This Web page includes JavaScript functions.")
+</script>
+</p>
+
+<p>The product of 3202 and 23405 is
+<script>
+  var product = MultiplyNumbers(3202, 23405)
+  document.write(product)
+</script>
+</p>
+</body>
+
+</html>

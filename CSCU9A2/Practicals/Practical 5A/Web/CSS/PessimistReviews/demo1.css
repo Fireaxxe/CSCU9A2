@@ -1,0 +1,49 @@
+/* Set the font for the whole page. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Set some standard margins for paragraphs. */
+p
+{
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+
+/* Format the heading with a background color. */
+h1 {
+  background-color: #FDF5E6;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Make the bylines small and italicized. */
+p.byline {
+  font-size: 65%;
+  font-style: italic;
+  border-bottom-style: outset;
+  border-bottom-width: 1px;
+  margin-bottom: 5px;
+  margin-top: 0px;
+}
+
+/* Make book reviews a little smaller, and justified. */
+p.review {
+  font-size: 83%;
+  text-align: justify;
+}
+
+/* Make the review headings blue. */
+h2.review {
+  font-size: large;
+  color: blue;
+  margin-bottom: 0px;
+}
+
+ul, ol {
+  font-size: 14;
+  font-style: italic;
+  color: red;
+}
+
+

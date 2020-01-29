@@ -1,0 +1,46 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+
+public class SimpleSlider extends JFrame
+    implements ChangeListener {
+
+    private JLabel sliderLabel, displayLabel;
+    private JSlider slider;    
+    private JTextField displayField;
+
+    public static void main (String[] args) {
+        SimpleSlider frame = new SimpleSlider();
+        frame.setSize(400,100);
+        frame.setLocation(200,200);
+        frame.setTitle("Simple slider demo");
+        frame.createGUI();
+        frame.setVisible(true);
+    }
+
+    private void createGUI() {
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        Container window = getContentPane();
+        window.setLayout(new FlowLayout() );
+
+        sliderLabel = new JLabel("Adjust to select a number: ");
+        window.add(sliderLabel);
+
+        slider = new JSlider(JSlider.HORIZONTAL, -200, 2000, 1000);
+        window.add(slider);
+        slider.addChangeListener(this);
+ 
+        displayLabel = new JLabel("The number chosen is: ");
+        window.add(displayLabel);
+
+        displayField = new JTextField("1000");
+        displayField.setFont(new Font("Arial", Font.BOLD, 20));
+        window.add(displayField);
+    }
+
+    public void stateChanged(ChangeEvent e) {
+        int selectedNumber = slider.getValue();
+        displayField.setText(Integer.toString(selectedNumber));
+    }
+}

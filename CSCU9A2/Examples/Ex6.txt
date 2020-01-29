@@ -1,0 +1,57 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+
+public class WindowBlind extends JFrame
+    implements ChangeListener {
+
+    private JSlider slider;    
+    private JPanel panel;
+    private int blindHeight = 50;
+
+    public static void main (String[] args) {
+        WindowBlind frame = new WindowBlind();
+        frame.setSize(400,400);
+        frame.setLocation(200,200);
+        frame.createGUI();
+        frame.setVisible(true);
+    }
+
+    private void createGUI() {
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        Container window = getContentPane();
+        window.setLayout(new FlowLayout() );
+
+        JLabel sliderLabel = new JLabel("Drag to adjust the blind: ");
+        window.add(sliderLabel);
+
+        slider = new JSlider(JSlider.HORIZONTAL, 0, 100, 50);
+        window.add(slider);
+        slider.addChangeListener(this);
+        
+        panel = new JPanel() {
+            // paintComponent is called automatically when a screen refresh is needed
+            public void paintComponent(Graphics g) {
+                // g is a cleared screen area
+                super.paintComponent(g); // Paint the panel's background
+                paintScreen(g);
+            }
+        };
+        panel.setPreferredSize(new Dimension(300, 300));
+        panel.setBackground(Color.cyan);
+        window.add(panel);
+    }
+
+    public void stateChanged(ChangeEvent e) {
+        blindHeight = slider.getValue();
+        repaint();  // Forces a screen refresh
+    }
+
+    private void paintScreen(Graphics g) {
+        g.setColor(Color.black);
+        g.drawRect(120, 80, 60, 100);
+        g.fillRect(120, 80, 60, blindHeight);
+    }
+
+}
